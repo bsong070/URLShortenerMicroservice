@@ -10,9 +10,9 @@ const app = express();
 mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser:true, 
   useUnifiedTopology: true}) //for production
 
-//mongoose.connect("mongodb+srv://user1:@freecodecamp.4rcza.mongodb.net/db1?retryWrites=true&w=majority", 
-{useNewUrlParser:true, 
-  useUnifiedTopology: true}) //for locally
+// //mongoose.connect("mongodb+srv://user1:@freecodecamp.4rcza.mongodb.net/db1?retryWrites=true&w=majority", 
+// {useNewUrlParser:true, 
+//   useUnifiedTopology: true}) //for locally
 
 // Basic Configuration
 const port = process.env.PORT || 3000;
