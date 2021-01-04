@@ -9,7 +9,7 @@ const app = express();
 
 //mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true, useUnifiedTopology: true}) //for production
 
-mongoose.connect("mongodb+srv://user1:0IcYwl3Qa3oJHdky@freecodecamp.4rcza.mongodb.net/db1?retryWrites=true&w=majority", 
+mongoose.connect("mongodb+srv://user1: + process.env.PW + @freecodecamp.4rcza.mongodb.net/db1?retryWrites=true&w=majority", 
 {useNewUrlParser:true, 
   useUnifiedTopology: true}) //for locally
 
