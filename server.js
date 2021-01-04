@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const mongodb = require('mongodb');
-mongoose.set('useFindAndModify', false)
+mongoose.set('useFindAndModify', false);
 
 const app = express();
 
