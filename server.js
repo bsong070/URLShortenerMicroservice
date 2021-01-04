@@ -41,6 +41,8 @@ let urlSchema = new mongoose.Schema({
 
 let Url = mongoose.model('Url',urlSchema)
 
+mongoose.set('useFindAndModify', false)
+
 let bodyParser = require('body-parser')
 let responseObject={}
 app.post('/api/shorturl/new',bodyParser.urlencoded({extended:false}), (request, response)=>{
