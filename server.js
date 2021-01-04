@@ -2,7 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const mongo = require('mongodb');
+const mongodb = require('mongodb');
+mongoose.set('useFindAndModify', false)
 
 const app = express();
 
@@ -41,7 +42,6 @@ let urlSchema = new mongoose.Schema({
 
 let Url = mongoose.model('Url',urlSchema)
 
-mongoose.set('useFindAndModify', false)
 
 let bodyParser = require('body-parser')
 let responseObject={}
@@ -81,14 +81,14 @@ app.post('/api/shorturl/new',bodyParser.urlencoded({extended:false}), (request, 
       })
 })
 
-app.get('/api/shorturl/:input',(request,response)=>{
+app.get('/api/shorturl/:input', (request, response) => {
   let input = request.params.input
-
-  Url.findOne({short: input}), (error,result)=>{
+  
+  Url.findOne({short: input}, (error, result) => {
     if(!error && result != undefined){
       response.redirect(result.original)
     }else{
-      response.json('URL Not Found')
+      response.json('URL not Found')
     }
-  }
+  })
 })
